@@ -14,9 +14,7 @@ import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.OptimisticLockException;
-import javax.persistence.PersistenceException;
+import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.List;
@@ -33,6 +31,7 @@ public class ConversationUseCaseControllerCdi implements Serializable {
     }
 
     @Inject
+    @PersistenceContext(unitName = "StudentsPU")
     private EntityManager em;
 
     @Inject

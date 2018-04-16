@@ -26,7 +26,7 @@ public class ConversationUseCaseControllerEjb implements Serializable {
         CREATE_COURSE, CREATE_STUDENT, CONFIRMATION
     }
 
-    @PersistenceContext(type = PersistenceContextType.EXTENDED, synchronization = SynchronizationType.UNSYNCHRONIZED)
+    @PersistenceContext(unitName = "StudentsPU", type = PersistenceContextType.EXTENDED, synchronization = SynchronizationType.UNSYNCHRONIZED)
     private EntityManager em;
 
     @Inject

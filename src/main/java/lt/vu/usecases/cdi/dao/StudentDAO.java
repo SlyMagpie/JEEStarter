@@ -5,11 +5,14 @@ import lt.vu.entities.Student;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @ApplicationScoped
 public class StudentDAO {
     @Inject
+    @PersistenceContext(unitName = "StudentsPU")
     private EntityManager em;
 
     public void create(Student student) {

@@ -4,17 +4,14 @@ import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-import javax.persistence.SynchronizationType;
+import javax.persistence.*;
 import java.util.Date;
 
 @Named
 @Stateful
 @RequestScoped
 public class Comp1 {
-    @PersistenceContext(type = PersistenceContextType.TRANSACTION, synchronization = SynchronizationType.SYNCHRONIZED)
+    @PersistenceContext(unitName = "StudentsPU", type = PersistenceContextType.TRANSACTION, synchronization = SynchronizationType.SYNCHRONIZED)
     private EntityManager em;
 
     @Inject

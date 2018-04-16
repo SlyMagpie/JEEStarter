@@ -2,6 +2,7 @@ package lt.vu.usecases.mybatis.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.entities.Computer;
 
 import java.util.List;
 

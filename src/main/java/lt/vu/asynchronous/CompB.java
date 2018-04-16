@@ -7,6 +7,8 @@ import javax.ejb.AsyncResult;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.concurrent.Future;
@@ -16,6 +18,7 @@ public class CompB implements Serializable {
 
     @Inject
     @RescueOrAsync            // Asinchroninis komponentas negali naudoti @RequestScoped konteksto
+    @PersistenceContext(unitName = "StudentsPU")
     private EntityManager em; // Jei šis komponentas turi dirbti su DB per JPA
 
     @Futureable

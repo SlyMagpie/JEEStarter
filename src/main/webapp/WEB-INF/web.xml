@@ -75,6 +75,10 @@
         <role-name>Admin</role-name>
     </security-role>
 
+    <persistence-context-ref>
+        <persistence-context-ref-name>persistence/rooms</persistence-context-ref-name>
+        <persistence-unit-name>RoomsPU</persistence-unit-name>
+    </persistence-context-ref>
     <!--
         AUTHENTICATION SETTINGS
     -->

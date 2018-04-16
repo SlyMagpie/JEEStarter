@@ -13,7 +13,6 @@ import java.io.IOException;
 @Slf4j
 @ApplicationScoped
 public class MyBatisResources {
-
     @Produces
     @ApplicationScoped
     @SessionFactoryProvider
@@ -27,5 +26,4 @@ public class MyBatisResources {
             throw new RuntimeException("MyBatisResources.produceSqlSessionFactory(): ", e);
         }
     }
-
 }

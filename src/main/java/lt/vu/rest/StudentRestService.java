@@ -5,6 +5,8 @@ import lt.vu.entities.Student;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -16,7 +18,9 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class StudentRestService {
 
-    @Inject private EntityManager em;
+    @Inject
+    @PersistenceContext(unitName = "StudentsPU")
+    private EntityManager em;
 
     @GET
     @Path("/{studentId}")

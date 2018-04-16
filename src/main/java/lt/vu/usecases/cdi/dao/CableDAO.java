@@ -1,25 +1,25 @@
 package lt.vu.usecases.cdi.dao;
 
+import lt.vu.entities.Cable;
 import lt.vu.entities.Course;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @ApplicationScoped
-public class CourseDAO {
+public class CableDAO {
     @Inject
-    @PersistenceContext(unitName = "StudentsPU")
+    @PersistenceContext(unitName = "RoomsPU")
     private EntityManager em;
 
-    public void create(Course course) {
-        em.persist(course);
+    public void create(Cable cable) {
+        em.persist(cable);
     }
 
-    public List<Course> getAllCourses() {
-        return em.createNamedQuery("Course.findAll", Course.class).getResultList();
+    public List<Cable> getAllCables() {
+        return em.createNamedQuery("Cable.findAll", Cable.class).getResultList();
     }
 }

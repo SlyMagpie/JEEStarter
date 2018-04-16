@@ -14,7 +14,7 @@ import javax.persistence.SynchronizationType;
 @ApplicationScoped
 public class JPAResources {
 
-    @PersistenceUnit
+    @PersistenceUnit(unitName = "StudentsPU")
     private EntityManagerFactory emf;
 
     @Produces

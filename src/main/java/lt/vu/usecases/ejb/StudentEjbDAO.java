@@ -5,12 +5,13 @@ import lt.vu.entities.Student;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.SynchronizationType;
 import java.util.List;
 
 @Stateless
 public class StudentEjbDAO {
-    @PersistenceContext(synchronization = SynchronizationType.UNSYNCHRONIZED)
+    @PersistenceContext(unitName = "StudentsPU", synchronization = SynchronizationType.UNSYNCHRONIZED)
     private EntityManager em;
 
     public void create(Student student) {
